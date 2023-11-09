@@ -14,9 +14,8 @@ $(document).ready(function () {
             dataType: "json",
             data: JSON.stringify(datos),
             contentType: 'application/json; charset=utf-8',
-            success: function (result, status) {
-                console.log("Data: " + result + "\nStatus: " + status);
-                // });
+            success: function (result) {
+                console.log("Data: " + result);
             }
         });
     });
