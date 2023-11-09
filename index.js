@@ -15,7 +15,7 @@ $(document).ready(function(){
             data: JSON.stringify(datos),
             contentType: 'application/json; charset=utf-8',
             success: function(result, status) {
-                alert("Data: " + data + "\nStatus: " + status);
+                console.log("Data: " + result + "\nStatus: " + status);
                 // });
             }
   });      
