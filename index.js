@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    //const DIAG_API = "https://c64-diagnostic.fly.dev"
+    const DIAG_API = "http://localhost:8080"
+
     $("#send").click(function () {
         console.log('Sending ...');
 
@@ -9,7 +12,7 @@ $(document).ready(function () {
         };
 
         $.ajax({
-            url: "https://c64-diagnostic.fly.dev/diagnose",
+            url: DIAG_API + "/diagnose",
             type: "POST",
             dataType: "json",
             data: JSON.stringify(datos),

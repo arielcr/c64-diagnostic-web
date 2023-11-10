@@ -6,11 +6,29 @@ body {
     overflow: hidden;
 }
 
+.button {
+    font-family: "C64 User Mono";
+    background-color: #867ADE;
+    border: none;
+    color: #483AAA;
+    padding: 10px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    color:#D5DF7C;
+  }
+
 .diagnostic {
     margin-top: 25px;
     margin-left: auto;
     margin-right: auto;
-    width: 75%;
+    width: 97%;
+    font-size: 14px;
 }
 .title .center {
     text-align: center;
