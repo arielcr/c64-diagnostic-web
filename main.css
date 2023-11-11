@@ -17,11 +17,15 @@ body {
     display: inline-block;
     font-size: 14px;
     cursor: pointer;
-  }
+}
 
-  .button:hover {
-    color:#D5DF7C;
-  }
+.button:hover {
+    color: #D5DF7C;
+}
+
+.button-container {
+    margin-top: 25px;
+}
 
 .diagnostic {
     margin-top: 25px;
@@ -29,7 +33,43 @@ body {
     margin-right: auto;
     width: 97%;
     font-size: 14px;
+    line-height: 27px;
+    text-transform:uppercase;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+.pre-check {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.pass {
+    color: #72B14B;
+    font-size: 21px;
+    font-weight: bold;
+    margin-left: 10px;
+    display: none;
+}
+
+.fail {
+    color:#C18178;
+    font-size: 30px;
+    font-weight: bold;
+    display: none;
+    margin-left: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.color-yellow {
+    color:#D5DF7C;
+}
+
 .title .center {
     text-align: center;
 }
@@ -45,6 +85,10 @@ body {
     background: #483AAA;
     color: #867ADE;
     margin-top: 50px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
 }
 
 .title {
@@ -81,19 +125,35 @@ body {
     */
     -webkit-animation: blink 1s step-end infinite;
     animation: blink 1s step-end infinite;
-  }
-  
-  @-webkit-keyframes blink {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
-  
-  @keyframes blink {
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-  }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
 
 /* 
   ##Device = Desktops
@@ -153,6 +213,12 @@ body {
     .title {
         font-size: 9px;
     }
+    .diagnostic {
+        font-size: 9px;
+    }
+    .button {
+        font-size: 10px;
+    }
 }
 
 /* 
@@ -168,7 +234,14 @@ body {
     .title {
         font-size: 9px;
     }
+    .diagnostic {
+        font-size: 9px;
+    }
+    .button {
+        font-size: 10px;
+    }
 }
+
 /* 
 @-webkit-keyframes blink {
     0% {
