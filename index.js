@@ -6,28 +6,46 @@ $(document).ready(function () {
     $("#start").click(function () {
         console.log('Sending ...');
 
-        var datos = {
-            id: "Donald Duck",
-            title: "Duckburg"
+        var diagnostic = {
+            diagnostic: "precheck",
+            step: 1,
+            result: ""
         };
 
         $.ajax({
             url: DIAG_API + "/diagnose",
             type: "POST",
             dataType: "json",
-            data: JSON.stringify(datos),
+            data: JSON.stringify(diagnostic),
             contentType: 'application/json; charset=utf-8',
             success: function (result) {
-                console.log("Data: " + result);
 
+                console.log("test", result.test);
+                
                 $.get("templates/prechecks/b1.html", function (html_string) {
-                    $(".diagnostic").html(html_string);
+                    // Log the received HTML string
+                    console.log("Received HTML:", html_string);
+                
+                    // Create a jQuery object for the HTML string
+                    var modifiedHtml = $(html_string);
+                
+                    // Modify the elements directly
+                    modifiedHtml.find('.question').html(result.test);
+                    modifiedHtml.find('.test-info').html(result.type + " | Step " + result.step);
+                
+                    // Log the modified HTML string
+                    console.log("Modified HTML:", modifiedHtml);
+                
+                    // Update the content of .diagnostic with the modified HTML
+                    $(".diagnostic").html(modifiedHtml);
                 }, 'html');
+                
+          
             }
         });
     });
 
-    $(document).on('change', 'input[type=radio][name=precheck]', function() {
+    $(document).on('change', 'input[type=radio][name=answer]', function() {
         console.log(this.value);
         if (this.value == 'true') {
             $(".fail").hide();
