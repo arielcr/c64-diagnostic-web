@@ -62,12 +62,21 @@ table {
     margin-left: 10px;
 }
 
+.error {
+    color:#C18178;
+    display: none;
+}
+
 .center {
     text-align: center;
 }
 
 .color-yellow {
     color:#D5DF7C;
+}
+
+.color-turquoise {
+    color: #84C5CC;
 }
 
 .title .center {
