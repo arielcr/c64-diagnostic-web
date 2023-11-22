@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     //const DIAG_API = "https://c64-diagnostic.fly.dev"
-    const DIAG_API = "http://localhost:8080";
+    const DIAG_API = "http://localhost:8081";
 
     var metadata = {
         precheck: "",
@@ -32,11 +32,21 @@ $(document).ready(function () {
     $("#start").click(function () {
         var diagnostic = {
             diagnostic: "precheck",
-            step: 1,
+            step: "1",
             result: ""
         };
         diagnose(diagnostic);
     });
+
+    $(document).on('click', '#restart', function () {
+        var diagnostic = {
+            diagnostic: "precheck",
+            step: "1",
+            result: ""
+        };
+        diagnose(diagnostic);
+    });
+
 
     $(document).on('click', '#continue', function () {
         var $answer = $("input[name='answer']:checked");
@@ -44,13 +54,20 @@ $(document).ready(function () {
         if ($answer.length > 0) {
             $(".error").hide();
 
-            var diagnostic = {
-                diagnostic: "precheck",
-                step: 1,
-                result: $answer.val()
+            var answer = $answer.val();
+
+            var currentDiagnostic = JSON.parse(localStorage.getItem('diagnostic'));
+            console.log("LOCAL DIAGNOSTIC", currentDiagnostic);
+
+            var status = {
+                diagnostic: currentDiagnostic.step.type,
+                step: currentDiagnostic.step.step,
+                result: answer
             };
 
-            diagnose(diagnostic);
+            console.log("SEND STATUS", status);
+
+            diagnose(status);
         } else {
             $(".error").show();
         }
@@ -64,15 +81,31 @@ $(document).ready(function () {
             data: JSON.stringify(diagnostic),
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
-                $.get("templates/test.html", function (template) {
-                    var html = template
-                        .replace("{{step}}", data.step)
-                        .replace("{{type}}", (data.type).replace(/_/g, ' '))
-                        .replace("{{category}}", data.category)
-                        .replace("{{test}}", data.test)
-                        .replace("{{description}}", metadata[data.type]);
-                    $(".diagnostic").html(html);
-                }, 'html');
+                localStorage.setItem('diagnostic', JSON.stringify(data));
+
+                if(data.finish === true) {
+                    console.log(">> DIAGNOSTIC FINISHED");
+                    $.get("templates/diagnostic.html", function (template) {
+                        var html = template
+                            .replace("{{type}}", (data.step.type).replace(/_/g, ' '))
+                            .replace("{{category}}", data.step.category)
+                            .replace("{{diagnostic}}", data.description)
+                            .replace("{{description}}", metadata[data.step.type]);
+                        $(".diagnostic").html(html);
+                    }, 'html');
+                } else {
+                    console.log(">> DIAGNOSTIC NOT FINISHED");
+                    $.get("templates/test.html", function (template) {
+                        var html = template
+                            .replace("{{step}}", data.step.step)
+                            .replace("{{type}}", (data.step.type).replace(/_/g, ' '))
+                            .replace("{{category}}", data.step.category)
+                            .replace("{{test}}", data.step.test)
+                            .replace("{{description}}", metadata[data.step.type]);
+                        $(".diagnostic").html(html);
+                    }, 'html');
+                }
+                
             }
         });
     }
