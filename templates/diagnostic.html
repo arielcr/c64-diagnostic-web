@@ -1,9 +1,11 @@
 <p>
-    <p class="test-info">
-        <span class="color-turquoise">{{category}} | {{type}}</span> <br>
-        {{description}}
-    </p>
-    <p class="question color-yellow center">{{diagnostic}}</p>
+    <div class="test-info">
+        <div class="color-turquoise category">{{category}}</div> 
+        <div class="color-turquoise type right-align ">{{type}}</div> 
+        <div>{{description}}</div>
+    </div>
+    
+    <p class="question diagnostic-message neutral-diag  center">{{diagnostic}}</p>
 
     <div class="button-container center">
         <button id="restart" class="button" type="button">Restart</button> <span class="error">Please select an option.</span>

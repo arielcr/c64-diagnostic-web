@@ -54,6 +54,53 @@ table {
     display: none;
 }
 
+.test-info {
+    overflow: auto; 
+}
+
+.category, .type {
+    width: 50%; 
+    box-sizing: border-box; 
+    float: left;
+  }
+
+  .error-diag {
+    color: #C18178;
+    border: 2px dashed #C18178;
+  }
+
+  .success-diag {
+    color: #B3EC91;
+    border: 2px dashed #B3EC91;
+  }
+
+  .neutral-diag {
+    color: #D5DF7C;
+    border: 2px dashed #D5DF7C;
+  }
+
+
+.right-align {
+    text-align: right;
+}
+
+.diagnostic-message {
+    font-size: 16px;
+    padding: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+}
+
+.radio-label {
+    cursor: pointer;
+}
+
+.radio-button {
+    cursor: pointer;
+}
+
 .fail {
     color:#C18178;
     font-size: 30px;

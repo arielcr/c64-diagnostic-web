@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    //const DIAG_API = "https://c64-diagnostic.fly.dev"
-    const DIAG_API = "http://localhost:8081";
+    const DIAG_API = "https://c64-diagnostic.fly.dev"
+    //const DIAG_API = "http://localhost:8081";
 
     var metadata = {
         precheck: "",
@@ -84,17 +84,16 @@ $(document).ready(function () {
                 localStorage.setItem('diagnostic', JSON.stringify(data));
 
                 if(data.finish === true) {
-                    console.log(">> DIAGNOSTIC FINISHED");
                     $.get("templates/diagnostic.html", function (template) {
                         var html = template
                             .replace("{{type}}", (data.step.type).replace(/_/g, ' '))
                             .replace("{{category}}", data.step.category)
                             .replace("{{diagnostic}}", data.description)
+                            .replace("{{color}}", getStatusColorClass(data))
                             .replace("{{description}}", metadata[data.step.type]);
                         $(".diagnostic").html(html);
                     }, 'html');
                 } else {
-                    console.log(">> DIAGNOSTIC NOT FINISHED");
                     $.get("templates/test.html", function (template) {
                         var html = template
                             .replace("{{step}}", data.step.step)
@@ -108,6 +107,13 @@ $(document).ready(function () {
                 
             }
         });
+    }
+
+    function getStatusColorClass(data) {
+        if (data.description === data.step.error.diagnostic) {
+            return "error-diag";
+        }
+        return "success-diag";
     }
 
 
