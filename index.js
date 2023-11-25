@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     const DIAG_API = "https://c64-diagnostic.fly.dev"
-    //const DIAG_API = "http://localhost:8081";
+    //const DIAG_API = "http://localhost:8080";
 
     var metadata = {
         precheck: "",
