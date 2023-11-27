@@ -1,19 +1,35 @@
 <p>
     <div class="test-info">
-        <div class="color-turquoise category">{{category}}</div> 
-        <div class="color-turquoise type right-align ">{{type}}</div> 
-        <div>{{description}}</div>
+        <div class="header-container">
+            <div class="color-green category center">{{type}}</div> 
+            <div class="color-turquoise type center">{{category}}</div> 
+        </div>
+        <div class="color-gray">{{description}}</div>
     </div>
 
     <p class="question color-yellow">{{step}}. {{test}}</p>
 
-    <input type="radio" id="yes" name="answer" value="yes" class="radio-button">
-    <label for="yes" class="color-yellow radio-label ">Yes</label><br>
-    <input type="radio" id="no" name="answer" value="no" class="radio-button">
-    <label for="no" class="color-yellow radio-label ">No</label><br>
+    <label for="yes" class="form-control">
+        <input type="radio" id="yes" name="answer" value="yes" class="radio-button">
+        <span class="color-yellow">Yes</span>
+    </label>
+    <label for="no" class="form-control">
+        <input type="radio" id="no" name="answer" value="no" class="radio-button">
+        <span class="color-yellow">No</span>
+    </label>
 
-    <div class="button-container">
-        <button id="continue" class="button" type="button">CONTINUE</button> <span class="error">Please select an option.</span>
+    <div class="buttons-container">
+        <div class="left-buttons">
+            <button id="continue" class="button" type="button">CONTINUE</button> 
+            <button id="back" class="back-button" type="button">BACK</button> 
+        </div>
+        <div class="right-buttons right-align">
+            <button id="reset" class="reset-button" type="button">RESET</button> 
+        </div>
+        <div class="error-container">
+            <span class="error">Please select an option.</span>
+        </div>
     </div>
+    
 </p>
 

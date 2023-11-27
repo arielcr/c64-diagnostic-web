@@ -13,6 +13,10 @@ $(document).ready(function () {
         system_rom_io: ""
     };
 
+    var history = JSON.parse(localStorage.getItem('history')) || [];
+
+    loadHome();
+
     $.ajax({
         url: DIAG_API + "/metadata",
         type: "GET",
@@ -29,24 +33,68 @@ $(document).ready(function () {
         }
     });
 
-    $("#start").click(function () {
-        var diagnostic = {
+    $(document).on('click', '#start', function () {
+        diagnose({
             diagnostic: "precheck",
             step: "1",
             result: ""
-        };
-        diagnose(diagnostic);
+        });
     });
 
     $(document).on('click', '#restart', function () {
-        var diagnostic = {
-            diagnostic: "precheck",
-            step: "1",
-            result: ""
-        };
+        localStorage.clear();
+        loadHome();
+    });
+
+    $(document).on('click', '#reset', function () {
+        localStorage.clear();
+        loadHome();
+    });
+
+    $(document).on('click', '#back', function () {
+        var previousStep = removeHistory();
+        if (typeof previousStep === 'undefined') {
+            loadHome();
+        } else {
+            previousStep.result = "";
+            diagnose(previousStep);
+        }
+    });
+
+    $(document).on('click', '.categories li', function () {
+        var category = $(this).data("category");
+
+        if (category === "continue") {
+            var diagnostic = getLocalStorageDiagnostic();
+        } else {
+            var diagnostic = {
+                diagnostic: category,
+                step: "1",
+                result: ""
+            };
+    
+        }
+        
         diagnose(diagnostic);
     });
 
+    $(document).on('click', '#resources', function () {
+        $.get("templates/resources.html", function (template) {
+            $(".diagnostic").html(template);
+        }, 'html');
+    });
+
+    $(document).on('click', '#about', function () {
+        $.get("templates/about.html", function (template) {
+            $(".diagnostic").html(template);
+        }, 'html');
+    });
+
+    $(document).on('click', '#home ', function () {
+        $.get("templates/home.html", function (template) {
+            $(".diagnostic").html(template);
+        }, 'html');
+    });
 
     $(document).on('click', '#continue', function () {
         var $answer = $("input[name='answer']:checked");
@@ -57,7 +105,6 @@ $(document).ready(function () {
             var answer = $answer.val();
 
             var currentDiagnostic = JSON.parse(localStorage.getItem('diagnostic'));
-            console.log("LOCAL DIAGNOSTIC", currentDiagnostic);
 
             var status = {
                 diagnostic: currentDiagnostic.step.type,
@@ -65,7 +112,7 @@ $(document).ready(function () {
                 result: answer
             };
 
-            console.log("SEND STATUS", status);
+            addHistory(status);
 
             diagnose(status);
         } else {
@@ -83,7 +130,7 @@ $(document).ready(function () {
             success: function (data) {
                 localStorage.setItem('diagnostic', JSON.stringify(data));
 
-                if(data.finish === true) {
+                if (data.finish === true) {
                     $.get("templates/diagnostic.html", function (template) {
                         var html = template
                             .replace("{{type}}", (data.step.type).replace(/_/g, ' '))
@@ -104,9 +151,43 @@ $(document).ready(function () {
                         $(".diagnostic").html(html);
                     }, 'html');
                 }
-                
+
             }
         });
+    }
+
+    function addHistory(status) {
+        history.push(status);
+        localStorage.setItem('history', JSON.stringify(history));
+    }
+
+    function removeHistory() {
+        removed = history.pop();
+        localStorage.setItem('history', JSON.stringify(history));
+        return removed;
+    }
+
+    function getLocalStorageDiagnostic() {
+        if (localStorage.getItem('diagnostic') !== null) {
+        
+            var currentDiagnostic = JSON.parse(localStorage.getItem('diagnostic'));
+            return {
+                diagnostic: currentDiagnostic.step.type,
+                step: currentDiagnostic.step.step,
+                result: ""
+            };
+        }
+        return {
+            diagnostic: "precheck",
+            step: "1",
+            result: ""
+        };
+    }
+
+    function loadHome() {
+        $.get("templates/home.html", function (template) {
+            $(".diagnostic").html(template);
+        }, 'html');
     }
 
     function getStatusColorClass(data) {
