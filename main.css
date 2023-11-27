@@ -66,7 +66,7 @@ body {
 }
 
 .footer {
-    font-size: 12px;
+    font-size: 14px;
     overflow: auto;
     width: 50%;
     margin: 0 auto;
@@ -147,6 +147,13 @@ table {
     float: left;
     margin-top: 15px;
 }
+
+.resources-content{
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+}
+
 
 .about-imag {
     width: 20%;
