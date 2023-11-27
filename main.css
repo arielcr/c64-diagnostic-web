@@ -66,19 +66,22 @@ body {
 }
 
 .footer {
+    display: flex;
+    flex-wrap: wrap; 
     font-size: 14px;
-    overflow: auto;
     width: 50%;
     margin: 0 auto;
     margin-top: 10px;
 }
 
 .resource {
+    flex: 1;
     width: 25%;
-    box-sizing: border-box;
     float: left;
     text-align: center;
 }
+
+
 
 a {
     color: #483AAA !important;
@@ -530,6 +533,11 @@ ul {
     .back-button {
         font-size: 10px;
     }
+
+    .resource {
+        flex: 100%; 
+        margin-bottom: 5px;
+      }
 }
 
 /* 
@@ -565,6 +573,11 @@ ul {
     .back-button {
         font-size: 10px;
     }
+
+    .resource {
+        flex: 100%; 
+        margin-bottom: 5px;
+      }
 }
 
 /* 
