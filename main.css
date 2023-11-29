@@ -393,6 +393,30 @@ ul {
     list-style-type: none;
 }
 
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image-box {
+    flex: 1;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.image-box a {
+    display: block;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .content {
     width: 50%;
     margin-left: auto;
