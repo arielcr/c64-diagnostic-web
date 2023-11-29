@@ -20,7 +20,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the signal on pin 24 of IC U5 equal to +5V DC?",
+                "test": "Is the signal on pin 24 of IC U5 (Character ROM) equal to +5V DC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -41,7 +41,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the signal on pin 40 of IC U19 equal to +5V DC?",
+                "test": "Is the signal on pin 40 of IC U19 (VIC-II) equal to +5V DC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -62,7 +62,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the signal on pin 13 of IC U19 equal to +12V DC?",
+                "test": "Is the signal on pin 13 of IC U19 (VIC-II) equal to +12V DC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -83,7 +83,7 @@
                 "type": "precheck",
                 "category": "Signals on System Power Up",
                 "description": "",
-                "test": "Is the RESET signal on pin 40 of IC U7 equal to 0V DC on System Power Up to +5V DC in approximately 1 second?",
+                "test": "Is the RESET signal on pin 40 of IC U7 (CPU) equal to 0V DC on System Power Up to +5V DC in approximately 1 second?",
                 "error": {
                     "next": {
                         "category": "system_reset",
@@ -104,7 +104,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the ØCOLOR signal on pin 21 of IC U19 equal to 14.3 MHZ?",
+                "test": "Is the ØCOLOR signal on pin 21 of IC U19 (VIC-II) equal to 14.3 MHZ?",
                 "error": {
                     "next": {
                         "category": "system_clocks",
@@ -125,7 +125,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the ØIN signal on pin 22 of IC U19 equal to 8.18 MHZ?",
+                "test": "Is the ØIN signal on pin 22 of IC U19 (VIC-II) equal to 8.18 MHZ?",
                 "error": {
                     "next": {
                         "category": "system_clocks",
@@ -146,7 +146,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the ØOIN signal on pin 1 of IC U7 equal to 1.0 MHZ?",
+                "test": "Is the ØOIN signal on pin 1 of IC U7 (CPU) equal to 1.0 MHZ?",
                 "error": {
                     "next": {
                         "category": "system_clocks",
@@ -167,7 +167,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the Ø2 signal on pin 39 of IC U7 equal to 1.0 MHZ?",
+                "test": "Is the Ø2 signal on pin 39 of IC U7 (CPU) equal to 1.0 MHZ?",
                 "error": {
                     "next": {
                         "category": "system_clocks",
@@ -188,7 +188,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the COMPOSITE signal on pin 4 of connector CN5 approximately +2V DC Composite?",
+                "test": "Is the COMPOSITE signal on pin 4 of connector CN5 (monitor connector) (monitor connector) approximately +2V DC Composite?",
                 "error": {
                     "next": {
                         "category": "system_video",
@@ -209,7 +209,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the LUMINANCE signal on pin 1 of connector CN5 approximately +1V DC Luminance?",
+                "test": "Is the LUMINANCE signal on pin 1 of connector CN5 (monitor connector) approximately +1V DC Luminance?",
                 "error": {
                     "next": {
                         "category": "system_video",
@@ -230,7 +230,7 @@
                 "type": "precheck",
                 "category": "Basic System Checks",
                 "description": "",
-                "test": "Is the COLOR signal on pin 6 of connector CN5 approximately +1V DC Color?",
+                "test": "Is the COLOR signal on pin 6 of connector CN5 (monitor connector) approximately +1V DC Color?",
                 "error": {
                     "next": {
                         "category": "system_video",
@@ -287,7 +287,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective VR2"
+                    "diagnostic": "Defective voltage regulator VR2"
                 }
             },
             {
@@ -295,7 +295,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +5V DC CAN SUPPLY",
-                "test": "Is the AC IN signal on pins 4 and 6 of rectifier CR4 equal to 9V to 12V AC?",
+                "test": "Is the AC IN signal on pins 4 and 6 of rectifier CR4 (Bridge) equal to 9V to 12V AC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -308,7 +308,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective CR4"
+                    "diagnostic": "Defective CR4 (Bridge)"
                 }
             },
             {
@@ -316,7 +316,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +5V DC CAN SUPPLY",
-                "test": "Is the AC IN signal just on pin 4 of rectifier CR4 equal to 9V to 12V AC?",
+                "test": "Is the AC IN signal just on pin 4 of rectifier CR4 (Bridge) equal to 9V to 12V AC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -337,7 +337,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +5V DC CAN SUPPLY",
-                "test": "Is the AC IN signal just on pin 6 of rectifier CR4 equal to 9V to 12V AC?",
+                "test": "Is the AC IN signal just on pin 6 of rectifier CR4 (Bridge) equal to 9V to 12V AC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -358,7 +358,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +5V DC CAN SUPPLY",
-                "test": "Is the AC IN signal on pins 4 and 6 of rectifier CR4 NOT equal to 9V to 12V AC?",
+                "test": "Is the AC IN signal on pins 4 and 6 of rectifier CR4 (Bridge) NOT equal to 9V to 12V AC?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -379,7 +379,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +5V DC CAN SUPPLY",
-                "test": "Is the AC IN signal on pin 6 of connector CN7 equal to 9 to 12V AC?",
+                "test": "Is the AC IN signal on pin 6 of connector CN7 (power connector) equal to 9 to 12V AC?",
                 "error": {
                     "next": {
                         "category": "",
@@ -392,7 +392,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective L4, SW1"
+                    "diagnostic": "Defective L4 (Line Filter Assy), SW1"
                 }
             },
             {
@@ -400,7 +400,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +5V DC CAN SUPPLY",
-                "test": "Is the AC IN signal on pin 7 of connector CN7 equal to 9 to 12V AC?",
+                "test": "Is the AC IN signal on pin 7 of connector CN7 (power connector) equal to 9 to 12V AC?",
                 "error": {
                     "next": {
                         "category": "",
@@ -413,7 +413,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective L4, F1"
+                    "diagnostic": "Defective L4 (Line Filter Assy), F1"
                 }
             },
             {
@@ -455,7 +455,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective VR1"
+                    "diagnostic": "Defective voltage regulator VR1"
                 }
             },
             {
@@ -463,7 +463,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +12V DC SUPPLY",
-                "test": "Is the signal at the anode of diode CR6 equal to 9V to 12V AC Riding on a +9V to + 12V DC Level?",
+                "test": "Is the signal at the anode of diode CR6 (Rectifier) equal to 9V to 12V AC Riding on a +9V to + 12V DC Level?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -476,7 +476,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective CR5"
+                    "diagnostic": "Defective CR5 (Rectifier)"
                 }
             },
             {
@@ -484,7 +484,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +12V DC SUPPLY",
-                "test": "Is the signal at the anode of diode CR6 equal to 9V to 12V AC Only?",
+                "test": "Is the signal at the anode of diode CR6 (Rectifier) equal to 9V to 12V AC Only?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -497,7 +497,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective CR6"
+                    "diagnostic": "Defective CR6 (Rectifier)"
                 }
             },
             {
@@ -505,7 +505,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +12V DC SUPPLY",
-                "test": "Is the signal at the anode of diode CR6 equal to +9V to +12V DC Only?",
+                "test": "Is the signal at the anode of diode CR6 (Rectifier) equal to +9V to +12V DC Only?",
                 "error": {
                     "next": {
                         "category": "system_power_supply",
@@ -547,7 +547,7 @@
                 "type": "system_power_supply",
                 "category": "Basic System Checks",
                 "description": "INCORRECT +12V DC SUPPLY",
-                "test": "Is the + 5V DC signal on pin 5 of connector CN7 equal to +5V DC?",
+                "test": "Is the + 5V DC signal on pin 5 of connector CN7 (power connector) equal to +5V DC?",
                 "error": {
                     "next": {
                         "category": "",
@@ -560,7 +560,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective L5, SW1"
+                    "diagnostic": "Defective L5 (Coil Inductor), SW1 (Rocker Switch)"
                 }
             }
         ],
@@ -570,13 +570,13 @@
                 "type": "system_reset",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM RESET",
-                "test": "Is the output signal on pin 9 of IC U20 equal to +5V DC on System Power Up to 0V DC in approximately 1 second?",
+                "test": "Is the output signal on pin 9 of IC U20 (556 Dual Timer) equal to +5V DC on System Power Up to 0V DC in approximately 1 second?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U20, C24, C105, R34"
+                    "diagnostic": "Defective U20 (556 Dual Timer), C24 (Electrolytic Capacitor), C105 (Ceramic Capacitor), R34"
                 },
                 "success": {
                     "next": {
@@ -591,13 +591,13 @@
                 "type": "system_reset",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM RESET",
-                "test": "Is RESET signal on pin 40 of IC U7 equal to 0V DC on System Power up to +5V DC in approximately 1 Second?",
+                "test": "Is RESET signal on pin 40 of IC U7 (CPU) equal to 0V DC on System Power up to +5V DC in approximately 1 Second?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U8, U7"
+                    "diagnostic": "Defective U8 (Hex Inverter), U7 (CPU)"
                 },
                 "success": {
                     "next": {
@@ -614,13 +614,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 13 of IC U31 equal to 14.3 MHZ?",
+                "test": "Is the input signal on pin 13 of IC U31 (74LS629 Oscillator) equal to 14.3 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective Y1, U31"
+                    "diagnostic": "Defective Y1 (Crystal), U31 (74LS629 Oscillator)"
                 },
                 "success": {
                     "next": {
@@ -635,13 +635,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 21 of IC U19 equal to 14.3 MHZ?",
+                "test": "Is the input signal on pin 21 of IC U19 (VIC-II) equal to 14.3 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U31, U30, U19, FB16"
+                    "diagnostic": "Defective U31 (74LS629 Oscillator), U30 (74LS193 Binary Counter), U19 (VIC-II), FB16 (Ferrite Bead)"
                 },
                 "success": {
                     "next": {
@@ -656,13 +656,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 11 of IC U29 equal to 2.0 MHZ?",
+                "test": "Is the input signal on pin 11 of IC U29 (74LS74 Divider) equal to 2.0 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U3O, U29"
+                    "diagnostic": "Defective U3O, U29 (74LS74 Divider)"
                 },
                 "success": {
                     "next": {
@@ -677,13 +677,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 1 of IC U32 equal to 1.0 MHZ?",
+                "test": "Is the input signal on pin 1 of IC U32 (MC4044 Phase Detector) equal to 1.0 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U29, U32"
+                    "diagnostic": "Defective U29 (74LS74 Divider), U32 (MC4044 Phase Detector)"
                 },
                 "success": {
                     "next": {
@@ -698,13 +698,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 1 of IC U7 equal to 1.0 MHZ?",
+                "test": "Is the input signal on pin 1 of IC U7 (CPU) equal to 1.0 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U19, U7, U32"
+                    "diagnostic": "Defective U19 (VIC-II), U7 (CPU), U32 (MC4044 Phase Detector)"
                 },
                 "success": {
                     "next": {
@@ -725,7 +725,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U32, Q7"
+                    "diagnostic": "Defective U32 (MC4044 Phase Detector), Q7"
                 },
                 "success": {
                     "next": {
@@ -740,13 +740,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 9 of IC U32 equal to +1.5V to + 2V DC?",
+                "test": "Is the input signal on pin 9 of IC U32 (MC4044 Phase Detector) equal to +1.5V to + 2V DC?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective Q7, U32"
+                    "diagnostic": "Defective Q7, U32 (MC4044 Phase Detector)"
                 },
                 "success": {
                     "next": {
@@ -761,13 +761,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 2 of IC U31 equal to + 2V to + 3V DC?",
+                "test": "Is the input signal on pin 2 of IC U31 (74LS629 Oscillator) equal to + 2V to + 3V DC?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U32, U31"
+                    "diagnostic": "Defective U32 (MC4044 Phase Detector), U31 (74LS629 Oscillator)"
                 },
                 "success": {
                     "next": {
@@ -782,13 +782,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the input signal on pin 22 of IC U19 equal to 8.18 MHZ?",
+                "test": "Is the input signal on pin 22 of IC U19 (VIC-II) equal to 8.18 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U31, U19, FB17"
+                    "diagnostic": "Defective U31 (74LS629 Oscillator), U19 (VIC-II), FB17 (Ferrite Bead)"
                 },
                 "success": {
                     "next": {
@@ -803,13 +803,13 @@
                 "type": "system_clocks",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM CLOCKS",
-                "test": "Is the output signal on pin 39 of IC U7 equal to 1.0 MHZ?",
+                "test": "Is the output signal on pin 39 of IC U7 (CPU) equal to 1.0 MHZ?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U18, U7, U1, U2"
+                    "diagnostic": "Defective U18 (SID), U7 (CPU), U1 (CIA), U2 (CIA)"
                 },
                 "success": {
                     "next": {
@@ -826,7 +826,7 @@
                 "type": "system_video",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the SYNC/LUM signal on pin 15 of IC U19 equal to +5V DC Composite?",
+                "test": "Is the SYNC/LUM signal on pin 15 of IC U19 (VIC-II) equal to +5V DC Composite?",
                 "error": {
                     "next": {
                         "category": "system_video",
@@ -847,13 +847,13 @@
                 "type": "system_video",
                 "category": "Signals on System Power Up",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the C/S signal on pin 10 of IC U19 equal to +5V DC with a Negative Pulse ONCE on system Reset?",
+                "test": "Is the C/S signal on pin 10 of IC U19 (VIC-II) equal to +5V DC with a Negative Pulse ONCE on system Reset?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U19, U17, U1 5"
+                    "diagnostic": "Defective U19 (VIC-II), U17 (PLA), U15 (74LS139 Demultiplexor) "
                 },
                 "success": {
                     "next": {
@@ -868,20 +868,20 @@
                 "type": "system_video",
                 "category": "Signals on System Power Up",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the R/W signal on pin 11 of IC U19 equal to +5V DC with a negative Pulse ONCE on system Reset?",
+                "test": "Is the R/W signal on pin 11 of IC U19 (VIC-II) equal to +5V DC with a negative Pulse ONCE on system Reset?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U19, U1 7, U7, U6, U1 U2, U9-U12, U21-U24"
+                    "diagnostic": "Defective U19 (VIC-II), U17 (PLA), U7 (CPU), U6 (Color RAM), U1 (CIA) U2 (CIA), U9-U12, U21-U24 (Dynamic RAM)"
                 },
                 "success": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U19, M1"
+                    "diagnostic": "Defective U19 (VIC-II), M1 (Modulator)"
                 }
             },
             {
@@ -889,13 +889,13 @@
                 "type": "system_video",
                 "category": "Basic System Checks",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the COLOR signal on pin 14 of IC U19 equal to +2V DC Color on a +5V to +6V DC Level?",
+                "test": "Is the COLOR signal on pin 14 of IC U19 (VIC-II) equal to +2V DC Color on a +5V to +6V DC Level?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U19, M1"
+                    "diagnostic": "Defective U19 (VIC-II), M1 (Modulator)"
                 },
                 "success": {
                     "next": {
@@ -910,13 +910,13 @@
                 "type": "system_video",
                 "category": "Advanced System Checks",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the COMPOSITE signal on pin 4 of connector CNS equal to +2V DC Composite?",
+                "test": "Is the COMPOSITE signal on pin 4 of connector CN5 (monitor connector) equal to +2V DC Composite?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective M1"
+                    "diagnostic": "Defective M1 (Modulator)"
                 },
                 "success": {
                     "next": {
@@ -931,13 +931,13 @@
                 "type": "system_video",
                 "category": "Advanced System Checks",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the LUMINANCE signal on pin 1 of connector CN5 equal to +1V DC Sync/Lum?",
+                "test": "Is the LUMINANCE signal on pin 1 of connector CN5 (monitor connector) equal to +1V DC Sync/Lum?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective M1"
+                    "diagnostic": "Defective M1 (Modulator)"
                 },
                 "success": {
                     "next": {
@@ -952,13 +952,13 @@
                 "type": "system_video",
                 "category": "Advanced System Checks",
                 "description": "INCORRECT SYSTEM VIDEO",
-                "test": "Is the COLOR signal on pin 6 of connector CN5 equal to +1V DC Color?",
+                "test": "Is the COLOR signal on pin 6 of connector CN5 (monitor connector) equal to +1V DC Color?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective M1"
+                    "diagnostic": "Defective M1 (Modulator)"
                 },
                 "success": {
                     "next": {
@@ -975,7 +975,7 @@
                 "type": "system_ram",
                 "category": "Basic System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "With power applied to the system, feel ICs U9-U12, U21-U24. One or more are extremely hot?",
+                "test": "With power applied to the system, feel ICs U9-U12, U21-U24 (Dynamic RAM). One or more are extremely hot?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -996,13 +996,13 @@
                 "type": "system_ram",
                 "category": "Signals on System Power Up",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the DATA signal on pin 2 of each IC U9-U12, U21-U24 equal to +5V DC Immediately on Power Up? These DATA signals MUST GO TO A STRONG + 5 VDC LEVEL IMMEDIATELY when power is applied to the system.",
+                "test": "Is the DATA signal on pin 2 of each IC U9-U12, U21-U24 (Dynamic RAM) equal to +5V DC Immediately on Power Up? These DATA signals MUST GO TO A STRONG + 5 VDC LEVEL IMMEDIATELY when power is applied to the system.",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U12, U21-24"
+                    "diagnostic": "Defective U9-U12, U21-24 (Dynamic RAM)"
                 },
                 "success": {
                     "next": {
@@ -1017,7 +1017,7 @@
                 "type": "system_ram",
                 "category": "Basic System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the CASRAM signal on pin 15 of ICs U9-U12, U21-U24 equal to + 5V DC Pulse?",
+                "test": "Is the CASRAM signal on pin 15 of ICs U9-U12, U21-U24 (Dynamic RAM) equal to + 5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1038,20 +1038,20 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Cut pin 18 CASRAM of IC U17 and measure the signal on CUT PIN. Is the signal equal to + 5V DC Pulse?",
+                "test": "Cut pin 18 CASRAM of IC U17 (PLA) and measure the signal on CUT PIN. Is the signal equal to + 5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17"
+                    "diagnostic": "Defective U17 (PLA)"
                 },
                 "success": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U12, U21-U24"
+                    "diagnostic": "Defective U9-U12, U21-U24 (Dynamic RAM)"
                 }
             },
             {
@@ -1059,13 +1059,13 @@
                 "type": "system_ram",
                 "category": "Signals on System Power Up",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the R/W signal on pin 3 of ICs U9-U12, U21-U24 equal to +5V DC with a Negative Pulse ONCE on system Reset?",
+                "test": "Is the R/W signal on pin 3 of ICs U9-U12, U21-U24 (Dynamic RAM) equal to +5V DC with a Negative Pulse ONCE on system Reset?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U1 2, U21-U24, U17, U7, U1, U2"
+                    "diagnostic": "Defective U9-U12, U21-U24 (Dynamic RAM), U17 (PLA), U7 (CPU), U1 (CIA), U2 (CIA)"
                 },
                 "success": {
                     "next": {
@@ -1080,13 +1080,13 @@
                 "type": "system_ram",
                 "category": "Basic System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the RAS signal on pin 4 of ICs U9-U12, U21-U24 equal to +2V DC Pulse?",
+                "test": "Is the RAS signal on pin 4 of ICs U9-U12, U21-U24 (Dynamic RAM) equal to +2V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U12, U21-U24, U19, U26"
+                    "diagnostic": "Defective U9-U12, U21-U24 (Dynamic RAM), U19 (VIC-II), U26 (74LS373 Octal Latch)"
                 },
                 "success": {
                     "next": {
@@ -1101,7 +1101,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the output signal on pins 1, 7, 9, 12 of IC U13 equal to + 5V DC Pulse?",
+                "test": "Is the output signal on pins 1, 7, 9, 12 of IC U13 (74LS257 Multiplexor) equal to + 5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1122,7 +1122,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the input signal on pins 2, 3, 5, 6, 10, 11, 13, 14 of IC U13 equal to +5V DC Pulse?",
+                "test": "Is the input signal on pins 2, 3, 5, 6, 10, 11, 13, 14 of IC U13 (74LS257 Multiplexor) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1143,7 +1143,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the C/S ENABLE signal on pins 1 and 15 of IC U13 equal to +5V DC Pulse?",
+                "test": "Is the C/S ENABLE signal on pins 1 and 15 of IC U13 (74LS257 Multiplexor) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1177,7 +1177,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U19, U14, U13, U25"
+                    "diagnostic": "Defective U17 (PLA), U19 (VIC-II), U14 (74LS258 Multiplexor), U13 (74LS257 Multiplexor), U25 (74LS257 Multiplexor)"
                 }
             },
             {
@@ -1198,7 +1198,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U19, U14, U13, U25, U26, U27, U6, U8"
+                    "diagnostic": "Defective U17 (PLA), U19 (VIC-II), U14 (74LS258 Multiplexor), U13 (74LS257 Multiplexor), U25 (74LS257 Multiplexor), U26 (74LS373 Octal Latch), U27 (74LS08 Quad AND Gate), U6 (Color RAM), U8 (Hex Inverter)"
                 }
             },
             {
@@ -1206,20 +1206,20 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Cut pin 8, +5V DC, of IC U9-U12 and U21-U24 one at a time and measure the incorrect signal from Step 6 after each cut. Is the result equal to +5V DC Pulse?",
+                "test": "Cut pin 8, +5V DC, of IC U9-U12 and U21-U24 (Dynamic RAM) one at a time and measure the incorrect signal from Step 6 after each cut. Is the result equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U13"
+                    "diagnostic": "Defective U13 (74LS257 Multiplexor)"
                 },
                 "success": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U12, U21-U24"
+                    "diagnostic": "Defective U9-U12, U21-U24 (Dynamic RAM)"
                 }
             },
             {
@@ -1227,7 +1227,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Are the incorrect signals of IC U13 on pin 2, 5, 11, 14?",
+                "test": "Are the incorrect signals of IC U13 (74LS257 Multiplexor) on pin 2, 5, 11, 14?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1240,7 +1240,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U13, U7"
+                    "diagnostic": "Defective U17 (PLA), U13 (74LS257 Multiplexor), U7 (CPU)"
                 }
             },
             {
@@ -1248,7 +1248,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Are the incorrect signals of IC U13 on pin 3, 6, 10, 13?",
+                "test": "Are the incorrect signals of IC U13 (74LS257 Multiplexor) on pin 3, 6, 10, 13?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1261,7 +1261,7 @@
                         "category": "system_ram",
                         "step": "7.4"
                     },
-                    "diagnostic": "Defective U17, U13, U7"
+                    "diagnostic": "Defective U17 (PLA), U13 (74LS257 Multiplexor), U7 (CPU)"
                 }
             },
             {
@@ -1269,20 +1269,20 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Cut pin 24, +5V DC. of ICs U3, U4, U5 one at a time and measure the incorrect signal from Step 7.3 after each cut. Are the signals +5V DC Pulse?",
+                "test": "Cut pin 24, +5V DC of ICs U3 (BASIC ROM), U4 (Kernal ROM), U5 (Character ROM) one at a time and measure the incorrect signal from Step 7.3 after each cut. Are the signals +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U25, U7, U26, U6"
+                    "diagnostic": "Defective U25 (74LS257 Multiplexor), U7 (CPU), U26 (74LS373 Octal Latch), U6 (Color RAM)"
                 },
                 "success": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U3, U4, U5"
+                    "diagnostic": "Defective U3 (BASIC ROM), U4 (Kernal ROM), U5 (Character ROM)"
                 }
             },
             {
@@ -1290,7 +1290,7 @@
                 "type": "system_ram",
                 "category": "Basic System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is the output signal on pins 4, 7, 9, 12 of IC U25 equal to + 5V DC Pulse?",
+                "test": "Is the output signal on pins 4, 7, 9, 12 of IC U25 (74LS257 Multiplexor) equal to + 5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1311,7 +1311,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Is input signal on pins 2, 3, 5, 6, 10, 11, 13, 14 of iC U25 equal to +5V DC Pulse?",
+                "test": "Is input signal on pins 2, 3, 5, 6, 10, 11, 13, 14 of iC U25 (74LS257 Multiplexor) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1332,20 +1332,20 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Cut pin 8, + 5V DC, of ICs U9-U12, U21-U24 one at a time and measure the incorrect signal from Step 8 after each cut. Are the signals +5V DC Pulse?",
+                "test": "Cut pin 8, + 5V DC, of ICs U9-U12, U21-U24 (Dynamic RAM) one at a time and measure the incorrect signal from Step 8 after each cut. Are the signals +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U25"
+                    "diagnostic": "Defective U25 (74LS257 Multiplexor)"
                 },
                 "success": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U12, U21-U24"
+                    "diagnostic": "Defective U9-U12, U21-U24 (Dynamic RAM)"
                 }
             },
             {
@@ -1353,7 +1353,7 @@
                 "type": "system_ram",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM RAM CIRCUITRY",
-                "test": "Cut pin 24, +5V DC, of ICs U3, U4, U5 one at a time and measure the incorrect signal from Step 9 after each cut. Are the signals +5V DC Pulse?",
+                "test": "Cut pin 24, +5V DC, of ICs U3 (BASIC ROM), U4 (Kernal ROM), U5 (Character ROM) one at a time and measure the incorrect signal from Step 9 after each cut. Are the signals +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_ram",
@@ -1366,7 +1366,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U3, U4, U5"
+                    "diagnostic": "Defective U3 (BASIC ROM), U4 (Kernal ROM), U5 (Character ROM)"
                 }
             },
             {
@@ -1387,7 +1387,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U25, U7, U26, U6, U1, U2"
+                    "diagnostic": "Defective U25 (74LS257 Multiplexor), U7 (CPU), U26 (74LS373 Octal Latch), U6 (Color RAM), U1 (CIA), U2 (CIA)"
                 }
             },
             {
@@ -1408,7 +1408,7 @@
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U25, U7, U26, U6"
+                    "diagnostic": "Defective U25 (74LS257 Multiplexor), U7 (CPU), U26 (74LS373 Octal Latch), U6 (Color RAM)"
                 }
             }
         ],
@@ -1418,13 +1418,13 @@
                 "type": "system_rom_io",
                 "category": "Signals on System Power Up",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the CHAR ROM SELECT signal on pin 15 of IC U17 equal to +5V DC with negative pulse?",
+                "test": "Is the CHAR ROM SELECT signal on pin 15 of IC U17 (PLA) equal to +5V DC with negative pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U5"
+                    "diagnostic": "Defective U17 (PLA), U5 (Character ROM)"
                 },
                 "success": {
                     "next": {
@@ -1439,13 +1439,13 @@
                 "type": "system_rom_io",
                 "category": "Signals on System Power Up",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the KERN ROM SELECT signal on pin 16 of IC U17 equal to +5V DC with Negative Pulse?",
+                "test": "Is the KERN ROM SELECT signal on pin 16 of IC U17 (PLA) equal to +5V DC with Negative Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U4"
+                    "diagnostic": "Defective U17 (PLA), U4 (Kernal ROM)"
                 },
                 "success": {
                     "next": {
@@ -1460,13 +1460,13 @@
                 "type": "system_rom_io",
                 "category": "Signals on System Power Up",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the BASIC ROM SELECT signal on pin 17 of IC U17 equal to +5V DC with Negative Pulse on system Reset?",
+                "test": "Is the BASIC ROM SELECT signal on pin 17 of IC U17 (PLA) equal to +5V DC with Negative Pulse on system Reset?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U3"
+                    "diagnostic": "Defective U17 (PLA), U3 (BASIC ROM)"
                 },
                 "success": {
                     "next": {
@@ -1481,13 +1481,13 @@
                 "type": "system_rom_io",
                 "category": "Basic System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the l/O ENABLE signal on pin 12 of IC U17 equal to +5V DC with Negative Pulse?",
+                "test": "Is the I/O ENABLE signal on pin 12 of IC U17 (PLA) equal to +5V DC with Negative Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U15"
+                    "diagnostic": "Defective U17 (PLA), U15 (74LS139 Demultiplexor)"
                 },
                 "success": {
                     "next": {
@@ -1502,13 +1502,13 @@
                 "type": "system_rom_io",
                 "category": "Basic System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is ADDRESSES 12-15 on pins 2, 3, 4, 27 of IC U17 equal to +5V DC Pulse?",
+                "test": "Is ADDRESSES 12-15 on pins 2, 3, 4, 27 of IC U17 (PLA) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U7, U13, U26, U27, U6, U8"
+                    "diagnostic": "Defective U17 (PLA), U7 (CPU), U13 (74LS257 Multiplexor), U26 (74LS373 Octal Latch), U27 (74LS08 Quad AND Gate), U6 (Color RAM), U8 (Hex Inverter)"
                 },
                 "success": {
                     "next": {
@@ -1523,13 +1523,13 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks"    ,
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the CHAREN, HIRAM, LORAM signals on pins 6, 7, 8 of IC U17 equal to +5V DC Pulse?",
+                "test": "Is the CHAREN, HIRAM, LORAM signals on pins 6, 7, 8 of IC U17 (PLA) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U7"
+                    "diagnostic": "Defective U17 (PLA), U7 (CPU)"
                 },
                 "success": {
                     "next": {
@@ -1544,13 +1544,13 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the ROM L signal on pin 11 of IC U17 equal to +5V DC Pulse?",
+                "test": "Is the ROM L signal on pin 11 of IC U17 (PLA) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, Cartridge"
+                    "diagnostic": "Defective U17 (PLA), Cartridge"
                 },
                 "success": {
                     "next": {
@@ -1565,7 +1565,7 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the CASRAM signal on pin 18 of IC U17 equal to +5V DC Pulse?",
+                "test": "Is the CASRAM signal on pin 18 of IC U17 (PLA) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "system_rom_io",
@@ -1586,20 +1586,20 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Cut pin 1 8, CASRAM, of IC U17 and measure the signal on the cut pin. Is the signal equal to +5V DC Pulse?",
+                "test": "Cut pin 1 8, CASRAM, of IC U17 (PLA) and measure the signal on the cut pin. Is the signal equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": ""
                     },
-                    "diagnostic": "Defective U17"
+                    "diagnostic": "Defective U17 (PLA)"
                 },
                 "success": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U9-U12, U21-U24"
+                    "diagnostic": "Defective U9-U12, U21-U24 (Dynamic RAM)"
                 }
             },
             {
@@ -1607,13 +1607,13 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the VA12, VA13 on pins 20, 21 of IC U17 equal to +5V DC Pulse?",
+                "test": "Is the VA12, VA13 on pins 20, 21 of IC U17 (PLA) equal to +5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U19, U26, U9-U12, U21-U24"
+                    "diagnostic": "Defective U17 (PLA), U19 (VIC-II), U26 (74LS373 Octal Latch), U9-U12, U21-U24 (Dynamic RAM)"
                 },
                 "success": {
                     "next": {
@@ -1628,13 +1628,13 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the EXROM signal on pin 23 of IC U17 equal to 0V DC?",
+                "test": "Is the EXROM signal on pin 23 of IC U17 (PLA) equal to 0V DC?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, Cartridge"
+                    "diagnostic": "Defective U17 (PLA), Cartridge"
                 },
                 "success": {
                     "next": {
@@ -1649,13 +1649,13 @@
                 "type": "system_rom_io",
                 "category": "Signals on System Power Up",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the R/W signal on pin 24 of IC U17 +5V DC with Negative Pulse ONCE on system Reset?",
+                "test": "Is the R/W signal on pin 24 of IC U17 (PLA) +5V DC with Negative Pulse ONCE on system Reset?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U21, U9-U12, U21-24"
+                    "diagnostic": "Defective U17 (PLA), U9-U12, U21-24 (Dynamic RAM)"
                 },
                 "success": {
                     "next": {
@@ -1670,13 +1670,13 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the AEC signal on pin 25 of IC U17 equal to + 5V DC Pulse?",
+                "test": "Is the AEC signal on pin 25 of IC U17 (PLA) equal to + 5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U13, U25"
+                    "diagnostic": "Defective U17 (PLA), U13 (74LS257 Multiplexor), U25 (74LS257 Multiplexor)"
                 },
                 "success": {
                     "next": {
@@ -1691,13 +1691,13 @@
                 "type": "system_rom_io",
                 "category": "Advanced System Checks",
                 "description": "SYSTEM ROM SELECTION AND I/O DECODING",
-                "test": "Is the BA signal on pin 26 of IC U17 equal to + 5V DC Pulse?",
+                "test": "Is the BA signal on pin 26 of IC U17 (PLA) equal to + 5V DC Pulse?",
                 "error": {
                     "next": {
                         "category": "",
                         "step": "0"
                     },
-                    "diagnostic": "Defective U17, U19, U27"
+                    "diagnostic": "Defective U17 (PLA), U19 (VIC-II), U27 (74LS08 Quad AND Gate)"
                 },
                 "success": {
                     "next": {
