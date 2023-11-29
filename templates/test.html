@@ -1,8 +1,18 @@
 <p>
     <div class="test-info">
         <div class="header-container">
-            <div class="color-green category center">{{type}}</div> 
-            <div class="color-turquoise type center">{{category}}</div> 
+            <div class="color-green category">{{type}}</div> 
+            <div class="color-turquoise type">{{category}}</div> 
+            <div class="video-option">
+                <label for="ntsc" class="form-control-2">
+                    <input type="radio" id="ntsc" name="video" value="ntsc" class="radio-button" checked>
+                    <span class="color-yellow">NTSC</span>
+                </label>
+                <label for="pal" class="form-control-2">
+                    <input type="radio" id="[al]" name="video" value="pal" class="radio-button">
+                    <span class="color-yellow">PAL</span>
+                </label>
+            </div>
         </div>
         <div class="color-gray">{{description}}</div>
     </div>

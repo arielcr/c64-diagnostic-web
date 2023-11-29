@@ -1,7 +1,6 @@
 $(document).ready(function () {
 
     const DIAG_API = "https://c64-diagnostic.fly.dev"
-    //const DIAG_API = "http://localhost:8080";
 
     var metadata = {
         precheck: "",
@@ -15,7 +14,11 @@ $(document).ready(function () {
 
     var history = JSON.parse(localStorage.getItem('history')) || [];
 
+    var videoOption = 'ntsc';
+
     loadHome();
+
+    toggleNtscPal(videoOption);
 
     $.ajax({
         url: DIAG_API + "/metadata",
@@ -61,6 +64,11 @@ $(document).ready(function () {
         }
     });
 
+    $(document).on('click', 'input[name="video"]', function () {
+        videoOption = $('input[name="video"]:checked').val();
+        toggleNtscPal();
+      });
+
     $(document).on('click', '.categories li', function () {
         var category = $(this).data("category");
 
@@ -72,9 +80,9 @@ $(document).ready(function () {
                 step: "1",
                 result: ""
             };
-    
+
         }
-        
+
         diagnose(diagnostic);
     });
 
@@ -139,6 +147,7 @@ $(document).ready(function () {
                             .replace("{{color}}", getStatusColorClass(data))
                             .replace("{{description}}", metadata[data.step.type]);
                         $(".diagnostic").html(html);
+                        toggleNtscPal();
                     }, 'html');
                 } else {
                     $.get("templates/test.html", function (template) {
@@ -149,9 +158,9 @@ $(document).ready(function () {
                             .replace("{{test}}", data.step.test)
                             .replace("{{description}}", metadata[data.step.type]);
                         $(".diagnostic").html(html);
+                        toggleNtscPal();
                     }, 'html');
                 }
-
             }
         });
     }
@@ -169,7 +178,7 @@ $(document).ready(function () {
 
     function getLocalStorageDiagnostic() {
         if (localStorage.getItem('diagnostic') !== null) {
-        
+
             var currentDiagnostic = JSON.parse(localStorage.getItem('diagnostic'));
             return {
                 diagnostic: currentDiagnostic.step.type,
@@ -188,6 +197,31 @@ $(document).ready(function () {
         $.get("templates/home.html", function (template) {
             $(".diagnostic").html(template);
         }, 'html');
+    }
+
+    function toggleNtscPal() {
+        $('input[name="video"][value="'+videoOption+'"]').prop('checked', true);
+        
+        var replacements = [];
+
+        if (videoOption === 'pal') {
+            replacements = [
+                { oldString: '14.3', newString: '17.7' },
+                { oldString: '8.18', newString: '7.88' },
+            ];
+        } else {
+            replacements = [
+                { oldString: '17.7', newString: '14.3' },
+                { oldString: '7.88', newString: '8.18' },
+            ];
+        }
+
+        var content = $('.question').text();
+        replacements.forEach(function (replacement) {
+            content = content.replace(replacement.oldString, replacement.newString);
+        });
+
+        $('.question').text(content);
     }
 
     function getStatusColorClass(data) {
