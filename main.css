@@ -418,7 +418,7 @@ ul {
 }
 
 .content {
-    width: 50%;
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -514,21 +514,12 @@ ul {
   ##Screen = 1281px to higher resolution desktops
 */
 @media (min-width: 1281px) {
-    .area {
-        width: 100%;
-    }
-}
-
-/* 
-  ##Device = Laptops, Desktops
-  ##Screen = B/w 1025px to 1280px
-*/
-@media (min-width: 1025px) and (max-width: 1280px) {
     .content {
-        width: 95%;
+        width: 65%;
     }
     .area {
         width: 100%;
+        height: 680px;
     }
 }
 
@@ -542,6 +533,7 @@ ul {
     }
     .area {
         width: 100%;
+        height: 785px;
     }
 }
 
